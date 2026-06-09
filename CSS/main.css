@@ -1,0 +1,75 @@
+/* --- Base --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    background-color: #0d0d12;
+    color: #a1a1aa;
+    min-height: 100vh;
+}
+
+/* --- Loading Screen --- */
+#loader {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.25s ease;
+}
+
+#loader-video { 
+    width: 150px; 
+    height: 150px; 
+}
+
+/* --- Main Layout --- */
+.main {
+    max-width: 800px;
+    margin: 20vh auto;
+    padding: 0 40px;
+}
+
+/* Typography */
+h1 {
+    font-size: 1.85rem;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+}
+
+#description p {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+}
+
+/* Button Styles */
+a {
+    display: inline-block;
+    padding: 10px 22px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #6366f1;
+    border: 1px solid #6366f1;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    background: #6366f1;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+}
