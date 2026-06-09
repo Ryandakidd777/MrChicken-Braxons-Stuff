@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 212">
+  <defs>
+    <style>
+      .cls-1 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        fill: #ff0004;
+      }
+    </style>
+  </defs>
+  <g id="Bottom" class="cls-1">
+    <g id="Bottom-2" data-name="Bottom">
+      <rect class="cls-2" x="1" y="179" width="35" height="33" rx="9" ry="9"/>
+    </g>
+  </g>
+  <g id="Top" class="cls-1">
+    <g id="Top-2" data-name="Top">
+      <rect class="cls-2" width="35" height="159" rx="9" ry="9"/>
+    </g>
+  </g>
+</svg>
