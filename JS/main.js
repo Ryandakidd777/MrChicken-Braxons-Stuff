@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", function() {
 function initApp() {
     buildFooter();
     
-    // Check GitHub immediately on load, then check every 10 seconds (10000ms)
+    // Check GitHub immediately on load, then check every 5 mins
     checkWebsiteUpdate(); 
-    setInterval(checkWebsiteUpdate, 10000); 
+    setInterval(checkWebsiteUpdate, 300000); 
     
     setupEventListeners();
 }
