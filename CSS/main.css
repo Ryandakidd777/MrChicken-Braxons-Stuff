@@ -5,12 +5,22 @@
     padding: 0;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
 body {
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
-    background-color: #0d0d12;
-    color: #a1a1aa;
-    min-height: 100vh;
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* --- Loading Screen --- */
@@ -35,41 +45,51 @@ body {
 
 /* --- Main Layout --- */
 .main {
-    max-width: 800px;
-    margin: 20vh auto;
-    padding: 0 40px;
+    max-width: 650px;
+    padding: 0 30px;
+    text-align: center;
+    width: 100%;
 }
 
-/* Typography */
+/* --- Typography --- */
 h1 {
-    font-size: 1.85rem;
+    font-family: "Georgia", "Playfair Display", serif;
+    font-size: 2.2rem;
     color: #ffffff;
+    font-weight: 400;
     letter-spacing: -0.5px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
 }
 
 #description p {
     font-size: 1.05rem;
-    margin-bottom: 1.5rem;
-    max-width: 600px;
+    color: #85868c;
 }
 
-/* Button Styles */
+/* --- Button Styles --- */
 a {
     display: inline-block;
-    padding: 10px 22px;
-    font-family: monospace;
+    padding: 12px 28px;
     font-size: 0.85rem;
-    color: #6366f1;
-    border: 1px solid #6366f1;
+    font-weight: 500;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 30px;
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s ease-in-out;
 }
 
 a:hover {
-    background: #6366f1;
-    color: #ffffff;
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    background-color: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+/* --- Media Elements --- */
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 80px;
+    height: auto;
 }
