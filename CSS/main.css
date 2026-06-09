@@ -17,11 +17,10 @@ body {
     line-height: 1.6;
     background-color: #0b0c10;
     color: #c5c6c7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 24px;
     position: relative; 
+    
+    /* FIX: Changed from flex to block layout so fixed headers can occupy the top space freely */
+    display: block; 
 }
 
 /* --- Loading Screen --- */
@@ -35,7 +34,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 99999; /* Boosted slightly to ensure it covers the fixed header during load */
     transition: opacity 0.25s ease;
 }
 
@@ -44,12 +43,21 @@ body {
     height: clamp(100px, 15vw, 150px); 
 }
 
-/* --- Main Layout --- */
+/* --- Main Layout Wrapper --- */
 .main {
     max-width: 650px;
     text-align: center;
     width: 100%;
-    margin-bottom: 80px;
+    
+    /* FIX: Replaced your old body centering mechanics down here */
+    margin: 0 auto; 
+    padding: 120px 24px 140px 24px; /* Big top padding stops the fixed header from blocking your H1 text */
+    
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* --- Typography --- */
@@ -67,8 +75,7 @@ h1 {
     color: #85868c;
 }
 
-/* --- Button Styles --- */
-a {
+.main a {
     display: inline-block;
     padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 28px);
     font-size: clamp(0.75rem, 2vw, 0.85rem);
@@ -80,6 +87,11 @@ a {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     transition: all 0.2s ease-in-out;
+}
+
+.main a:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-2px);
 }
 
 a:hover {
