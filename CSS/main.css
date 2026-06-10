@@ -13,13 +13,11 @@ html, body {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: "Inter", "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
-    background-color: #0b0c10;
+    background-color: #0b0c10; 
     color: #c5c6c7;
     position: relative; 
-    
-    /* FIX: Changed from flex to block layout so fixed headers can occupy the top space freely */
     display: block; 
 }
 
@@ -30,11 +28,11 @@ body {
     left: 0;
     width: 100%; 
     height: 100%;
-    background: #000000;
+    background: #000000; 
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99999; /* Boosted slightly to ensure it covers the fixed header during load */
+    z-index: 999999;
     transition: opacity 0.25s ease;
 }
 
@@ -48,11 +46,8 @@ body {
     max-width: 650px;
     text-align: center;
     width: 100%;
-    
-    /* FIX: Replaced your old body centering mechanics down here */
     margin: 0 auto; 
-    padding: 120px 24px 140px 24px; /* Big top padding stops the fixed header from blocking your H1 text */
-    
+    padding: 160px 24px 140px 24px; 
     min-height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
@@ -62,26 +57,27 @@ body {
 
 /* --- Typography --- */
 h1 {
-    font-family: "Georgia", "Playfair Display", serif;
-    font-size: clamp(1.6rem, 5vw, 2.2rem);
-    color: #ffffff;
-    font-weight: 400;
+    font-family: "Inter", "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    color: #ffffff; 
+    font-weight: 700; 
     letter-spacing: -0.5px;
     margin-bottom: 1.2rem;
 }
 
 #description p {
     font-size: clamp(0.95rem, 2.5vw, 1.05rem);
-    color: #85868c;
+    color: #9ba1b6; 
 }
 
+/* --- Button Styles --- */
 .main a {
     display: inline-block;
-    padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 28px);
-    font-size: clamp(0.75rem, 2vw, 0.85rem);
-    font-weight: 500;
+    padding: clamp(10px, 2vw, 12px) clamp(24px, 4vw, 32px);
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    font-weight: 600;
     color: #000000;
-    background-color: #ffffff;
+    background-color: #ffffff; 
     border-radius: 30px;
     text-decoration: none;
     margin-top: 1.5rem;
@@ -90,11 +86,6 @@ h1 {
 }
 
 .main a:hover {
-    background-color: #e2e8f0;
-    transform: translateY(-2px);
-}
-
-a:hover {
     background-color: #e2e8f0;
     transform: translateY(-2px);
 }
@@ -116,13 +107,25 @@ footer {
     width: calc(100% - 48px);
     max-width: 650px;
     text-align: center;
-    border-top: 1px solid rgba(197, 198, 199, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 1.5rem;
 }
 
 footer p {
     font-size: clamp(0.7rem, 2vw, 0.8rem);
-    color: #4a4b50;
+    color: #62677b;
     line-height: 1.5;
     letter-spacing: 0.5px;
+}
+
+/* Responsive resizing */
+@media (max-width: 768px) {
+    .main {
+        padding: 110px 16px 120px 16px;
+        }
+    
+    footer {
+        width: calc(100% - 32px); 
+        bottom: 16px;
+    }
 }
