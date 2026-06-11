@@ -1,5 +1,5 @@
+//main.js
 /* --- Page Loader --- */
-
 (function () {
     const loader = document.createElement("div");
     loader.id = "loader";
@@ -68,8 +68,8 @@ window.addEventListener("load", function () {
 
         setTimeout(() => {
             loader.style.display = "none";
-        }, 100);
-    }, 100);
+        }, 150);
+    }, 150);
 });
 
 /* --- Initialization --- */

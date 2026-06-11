@@ -1,4 +1,5 @@
-/* --- Dynamic Header Loader Component --- */
+//header.js
+/* --- Header Loader --- */
 document.addEventListener("DOMContentLoaded", () => {
     loadHeaderComponent();
 });

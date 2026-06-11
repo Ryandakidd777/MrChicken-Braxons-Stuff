@@ -1,4 +1,4 @@
-/* Footer.js */
+//footer.js
 let initialPushTime = null;
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -38,12 +38,10 @@ async function checkWebsiteUpdate() {
             day: 'numeric'
         });
 
-        // 1. Initial Page Load
         if (initialPushTime === null) {
             initialPushTime = currentPushTime;
             document.getElementById("last-updated").innerText = `Last updated: ${formattedDate}`;
         } 
-        // 2. Continuous Background Checks
         else if (currentPushTime > initialPushTime) {
             document.getElementById("last-updated").innerHTML = `
                 Last updated: ${formattedDate} <span style="color: #ff4a4a; font-weight: 800; margin-left: 5px;">(Outdated - Please Refresh)</span>
