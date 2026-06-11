@@ -1,0 +1,14 @@
+{
+  "updateLog": [
+    {
+      "version": "v.v.v",
+      "date": "YYYY-MM-DD",
+      "time": "",
+      "description": "Words",
+      "changes": [
+        "words",
+        "words"
+      ]
+    }
+  ]
+}
