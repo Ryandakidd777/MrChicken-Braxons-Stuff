@@ -1,1 +1,3 @@
-# MrChicken-Braxons-Stuff
+# MrChicken's Homemade Website
+**COMING SOON**
+***mega WIP***
