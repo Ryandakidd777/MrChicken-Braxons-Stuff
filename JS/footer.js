@@ -1,5 +1,5 @@
 /* Footer.js */
-let initialPushTime = null; // Track site load time in memory
+let initialPushTime = null;
 
 document.addEventListener("DOMContentLoaded", function() {
     initFooter();
@@ -8,9 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
 function initFooter() {
     buildFooter();
     
-    // Check GitHub immediately on load, then check every 10 seconds (10000ms)
     checkWebsiteUpdate(); 
-    setInterval(checkWebsiteUpdate, 10000); 
+    setInterval(checkWebsiteUpdate, 600000);
 }
 
 function buildFooter() {

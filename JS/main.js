@@ -1,9 +1,29 @@
 /* --- Page Loader --- */
 
+(function () {
+    const loader = document.createElement("div");
+    loader.id = "loader";
+
+    const video = document.createElement("video");
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true; 
+    video.id = "loader-video";
+    video.setAttribute("playsinline", "");
+
+    const source = document.createElement("source");
+    source.src = "/Media/Videos/ExclamitionSpin02.mp4.webm";
+    source.type = "video/webm";
+
+    video.appendChild(source);
+    loader.appendChild(video);
+    document.body.prepend(loader);
+})();
+
 let secondsLoaded = 0;
 let isPageLoaded = false;
 
-const secondsToWait = 10; // Change this to however many seconds you want
+const secondsToWait = 5;
 
 const loadingCheckInterval = setInterval(() => {
     if (isPageLoaded) {
@@ -37,7 +57,7 @@ const loadingCheckInterval = setInterval(() => {
     secondsLoaded++;
 }, 1000);
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     isPageLoaded = true;
 
     const loader = document.getElementById("loader");
