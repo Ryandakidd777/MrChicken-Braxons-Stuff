@@ -100,7 +100,7 @@ function setupEventListeners() {
         const favicon = document.createElement("link");
         favicon.rel = "icon";
         favicon.type = "image/svg+xml";
-        favicon.href = "/Media/Images/Logos/EXCLAMITIAN-WebsiteFavicon.webp";
+        favicon.href = "/Media/Images/Logos/Exc_WebsiteFavicon.webp";
         document.head.appendChild(favicon);
     }
 

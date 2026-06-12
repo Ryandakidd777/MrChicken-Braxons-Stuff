@@ -132,17 +132,12 @@ h1 {
 }
 
 /* --- Media Elements --- */
-/*img {
+img {
     display: block;
     margin: 0 auto;
     max-width: clamp(65px, 12vw, 80px);
     height: auto;
 }
-*/
-#img_distract {
-    height: 120px ; 
-    width: 120px ; 
-} /* temporal
 
 /* --- Footer Styles --- */
 footer {

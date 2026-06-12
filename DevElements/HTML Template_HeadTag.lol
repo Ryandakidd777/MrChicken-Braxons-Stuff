@@ -9,14 +9,14 @@
     <meta property="og:description" content="Welcome to MrChicken's Homemade Website!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mrchicken.braxonsstuff.com/">
-    <meta property="og:image" content="https://mrchicken.braxonsstuff.com/Media/Images/Logos/EXCLAMITIAN-WebsiteFavicon.webp">
+    <meta property="og:image" content="https://mrchicken.braxonsstuff.com/Media/Images/Logos/Exc_WebsiteFavicon.webp">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MrChicken's Homemade Website">
     <meta name="twitter:description" content="Welcome to MrChicken's Homemade Website!">
-    <meta name="twitter:image" content="https://mrchicken.braxonsstuff.com/Media/Images/Logos/EXCLAMITIAN-WebsiteFavicon.webp">
+    <meta name="twitter:image" content="https://mrchicken.braxonsstuff.com/Media/Images/Logos/Exc_WebsiteFavicon.webp">
 
-    <title></title>
+    <title>Page</title>
     <link rel="icon" href="/Media/Images/Logos/EXCLAMITIAN-WebsiteFavicon.webp">
     <link rel="stylesheet" href="/CSS/main.css">
     <link rel="stylesheet" href="/CSS/header.css">
