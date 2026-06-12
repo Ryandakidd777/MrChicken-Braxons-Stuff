@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +16,7 @@
     <meta name="twitter:description" content="Welcome to MrChicken's Homemade Website!">
     <meta name="twitter:image" content="https://mrchicken.braxonsstuff.com/Media/Images/Logos/EXCLAMITIAN-WebsiteFavicon.webp">
 
-    <title>404 - Page not Found</title>
+    <title></title>
     <link rel="icon" href="/Media/Images/Logos/EXCLAMITIAN-WebsiteFavicon.webp">
     <link rel="stylesheet" href="/CSS/main.css">
     <link rel="stylesheet" href="/CSS/header.css">
@@ -27,26 +25,3 @@
     <script src="/JS/header.js" defer></script>
     <script src="/JS/nothing.lol" defer></script>
 </head>
-<body>
-    <div class="main">
-        <div id="header">
-            <header>
-                <h1>
-                    404
-                    <br>
-                    Page not found</h1>
-            </header>
-            
-            <div id="description">
-                <p>This is either 404.html or...</p>
-                <p>you made a grave mistake</p>
-                
-                <a href="/">
-                    Return home
-                </a>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
