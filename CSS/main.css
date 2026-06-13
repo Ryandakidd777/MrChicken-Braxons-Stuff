@@ -139,6 +139,25 @@ img {
     height: auto;
 }
 
+/* Fixed Image Sizes */
+img.\31 00x100 { /* 100x100 px */
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+img.\32 50x250 { /* 250x250 px */
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+img.\35 00x500 { /* 500x500 px */
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
 /* --- Footer Styles --- */
 footer {
     position: absolute;
@@ -159,7 +178,6 @@ footer p {
     letter-spacing: 0.5px;
 }
 
-/* Responsive resizing */
 @media (max-width: 768px) {
     .main {
         padding: 65px 16px 120px 16px; 

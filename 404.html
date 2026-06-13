@@ -19,14 +19,27 @@
     <meta name="twitter:image" content="https://mrchicken.braxonsstuff.com/Media/Images/Logos/Exc_WebsiteFavicon.webp">
 
     <title>404 - Page not Found</title>
-    <link rel="icon" href="/Media/Images/Logos/EXCLAMITIAN-WebsiteFavicon.webp">
+    <link rel="icon" href="/Media/Images/Logos/Exc_WebsiteFavicon.webp">
     <link rel="stylesheet" href="/CSS/main.css">
     <link rel="stylesheet" href="/CSS/header.css">
     <script src="/JS/main.js" defer></script>
     <script src="/JS/footer.js" defer></script>
     <script src="/JS/header.js" defer></script>
     <script src="/JS/nothing.lol" defer></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const img = document.querySelector("#info img");
+
+            if (!img) return;
+
+            img.src = Math.random() < .6
+                ? "/Media/Images/Misc/MrChickenWasHere.png"
+                : "/Media/Images/Misc/MrChickenWasn'tHere.png";
+        });
+    </script>
 </head>
+
 <body>
     <div class="main">
         <div id="header">
@@ -36,11 +49,11 @@
                     <br>
                     Page not found</h1>
             </header>
-            
-            <div id="description">
+            <div id="info">
                 <p>This is either 404.html or...</p>
                 <p>you made a grave mistake</p>
-                
+                <br>
+                <img src="/Media/Images/Misc/MrChickenWasHere.png">                
                 <a href="/">
                     Return home
                 </a>
