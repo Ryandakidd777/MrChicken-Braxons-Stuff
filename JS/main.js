@@ -1,3 +1,4 @@
+/*© 2026 MrChicken's Homemade Website. All rights reserved. */
 //main.js
 
 /* --- Initialization --- */
