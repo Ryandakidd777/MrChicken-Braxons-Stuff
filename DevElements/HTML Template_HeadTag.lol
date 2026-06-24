@@ -17,7 +17,7 @@
     <meta name="twitter:image" content="https://mrchicken.braxonsstuff.com/Media/Images/Logos/Exc_WebsiteFavicon.webp">
 
     <title>Page</title>
-    <link rel="icon" href="/Media/Images/Logos/EXCLAMITIAN-WebsiteFavicon.webp">
+    <link rel="icon" href="/Media/Images/Logos/Exc_WebsiteFavicon.webp">
     <link rel="stylesheet" href="/CSS/main.css">
     <link rel="stylesheet" href="/CSS/header.css">
     <script src="/JS/main.js" defer></script>

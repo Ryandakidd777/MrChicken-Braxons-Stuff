@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function loadHeaderComponent() {
     try {
-        const response = await fetch("Components/header.html");
+        const response = await fetch("/Components/header.html");
         
         if (!response.ok) throw new Error("Failed to retrieve header template structure.");
         
@@ -31,11 +31,11 @@ function highlightCurrentPage() {
         return;
     }
 
-    if (currentPath.includes("projects.html")) {
+    if (currentPath.includes("/Pages/Projects.")) {
         document.getElementById("nav-projects")?.classList.add("active");
-    } else if (currentPath.includes("about.html")) {
+    } else if (currentPath.includes("/Pages/About/")) {
         document.getElementById("nav-about")?.classList.add("active");
-    } else if (currentPath.includes("contact.html")) {
+    } else if (currentPath.includes("/Pages/Contact/")) {
         document.getElementById("nav-contact")?.classList.add("active");
     }
 }
