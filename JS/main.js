@@ -80,8 +80,8 @@
 
             setTimeout(() => {
                 loader.style.display = "none";
-            }, 150);
-        }, 150);
+            }, 250);
+        }, 250);
     });
 
 /* --- Event Listeners --- */
