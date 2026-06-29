@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     agreeSection.appendChild(label);
     guidelines.appendChild(agreeSection);
 
-    let secondsLeft = 10;
+    let secondsLeft = 15;
     countdown.textContent = "(" + secondsLeft + "s)";
 
     const timer = setInterval(() => {
