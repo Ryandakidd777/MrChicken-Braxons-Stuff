@@ -9,4 +9,6 @@
 
 ![MrChicken's Homemade Website Logo](https://mrchicken.braxonsstuff.com/Media/Images/Logos/Exc_WebsiteFavicon.webp)
 
+no way LOLCODE is 5% of this repo...
+
 **© 2026 MrChicken's Homemade Website. All rights reserved.**
