@@ -1,0 +1,86 @@
+name: Bug Report
+description: Report a bug to help improve MrChicken's Homemade Website
+title: "[BUG] "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the form below to report an issue with **mrchicken.braxonsstuff.com**. Provide as much detail as possible to help reproduce and fix the problem.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: Clearly explain what the bug is.
+      placeholder: Something broke when I...
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Page URL
+      description: Provide the exact link to the page where the bug occurred.
+      placeholder: https://mrchicken.braxonsstuff.com/...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can this bug be reproduced?
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll to '...'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened instead?
+      placeholder: It should have...
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Device and Browser
+      description: Specify the device and browser you are using to view the site.
+      placeholder: e.g., Windows 11 Chrome, iPhone Safari, macOS Firefox
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console errors / logs
+      description: Paste any errors from the browser console (F12 → Console).
+      placeholder: Paste logs here...
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: Anything else we should know? Drag and drop screenshots here if applicable.
+      placeholder: Extra details, screenshots, etc.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Before submitting
+      options:
+        - label: I have checked existing issues to make sure this bug has not already been reported.
+          required: true
