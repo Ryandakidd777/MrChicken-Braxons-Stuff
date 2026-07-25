@@ -19,7 +19,7 @@
     <meta name="twitter:description" content="Welcome to MrChicken's Homemade Website!">
     <meta name="twitter:image" content="https://mrchicken.braxonsstuff.com/Media/Images/Logos/Exc_WebsiteFavicon.webp">
 
-    <title>Home</title>
+    <title>Page</title>
     <link rel="icon" href="/Media/Images/Logos/Exc_WebsiteFavicon.webp">
     <link rel="stylesheet" href="/CSS/main.css">
     <link rel="stylesheet" href="/CSS/header.css">
