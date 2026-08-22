@@ -1,0 +1,205 @@
+/*© 2026 MrChicken's Homemade Website. All rights reserved. */
+/*Pages_Projects.css*/
+
+/* ------------------------------------------------------------------
+   PROJECT STATUS KEY — pick one label + one dot class per card
+
+   Label              Dot class            Dot color    Meaning
+   -----------------  -------------------  -----------  --------------------------------
+   In Development     dot_development      #4d8cff      actively being built
+   Testing            dot_testing          #4d8cff      playable, still shaking out bugs
+   Live               dot_live             #3ddc84*     released and generally stable
+   On Hold            dot_onhold           #9ba1b6      paused, not actively worked on
+   Archived           dot_archived         #5c6270      discontinued / no longer maintained
+   Concept            dot_concept          #9ba1b6      idea stage, nothing playable yet
+                                                          (outline only, no fill)
+
+   * new color, not currently used elsewhere on the site
+
+   Usage:
+   <span class="status-pill"><span class="dot dot_development"></span>In Development</span>
+   ------------------------------------------------------------------ */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+
+    width: 100%;
+    max-width: 1100px;
+    margin: 24px auto 0;
+}
+
+/* .main sets text-align:center globally — cards read better left-aligned */
+.project-grid .project-card {
+    text-align: left;
+
+    background: #1b1d22;
+    border: 2px solid #2d3138;
+    border-radius: 16px;
+    overflow: hidden;
+
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-grid .project-card:hover {
+    border-color: #4d8cff;
+    transform: translateY(-2px);
+}
+
+.project-grid .card-media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #12141c;
+}
+
+.project-grid .card-media img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+}
+
+.project-grid .status-pill {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    background: rgba(11, 12, 16, 0.85);
+    border: 1px solid #2d3138;
+    border-radius: 999px;
+    padding: 4px 10px;
+
+    font-size: 0.75rem;
+    color: #e2e8f0;
+}
+
+/* Base dot shape — color comes from the dot_* modifier class below */
+
+/* ------------------------------------------------------------------
+   PROJECT STATUS KEY — pick one label + one dot color per card
+
+   Status            Dot color   Meaning
+   ----------------  ----------  --------------------------------
+   In Development    #4d8cff     actively being built
+   Testing           #2ebdff     playable, still shaking out bugs
+   Live              #00ff73     released and generally stable
+   On Hold           #9ba1b6     paused, not actively worked on
+   Archived          #5c6270     discontinued / no longer maintained
+   Concept           #9ba1b6     idea stage, nothing playable yet
+                                 (outline only, no fill)
+
+   ------------------------------------------------------------------ */
+  
+.project-grid .dot {
+    display: inline-block;
+    flex: 0 0 7px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4d8cff;
+}
+
+.project-grid .dot_development {
+    background: #4d8cff;
+}
+
+.project-grid .dot_testing {
+    background: #2ebdff;
+}
+
+.project-grid .dot_live {
+    background: #00ff73;
+}
+
+.project-grid .dot_onhold {
+    background: #9ba1b6;
+}
+
+.project-grid .dot_archived {
+    background: #5c6270;
+}
+
+.project-grid .dot_concept {
+    background: transparent;
+    border: 1.5px solid #9ba1b6;
+    width: 6px;
+    height: 6px;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(var(--pulse-color), 0.4); }
+    50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(var(--pulse-color), 0); }
+}
+
+.project-grid .card-body {
+    padding: 18px 18px 20px;
+}
+
+.project-grid .card-body h3 {
+    margin: 0 0 8px;
+    font-size: 1.15rem;
+    color: #ffffff;
+}
+
+.project-grid .card-body p {
+    margin: 0 0 14px;
+    font-size: 0.92rem;
+    color: #9ba1b6;
+}
+
+.project-grid .tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 16px;
+    padding: 0;
+}
+
+.project-grid .tags li {
+    background: #12141c;
+    border: 1px solid #2d3138;
+    border-radius: 6px;
+    padding: 3px 9px;
+    font-size: 0.72rem;
+    color: #9ba1b6;
+}
+
+/* Higher specificity than main.css's ".main a" so this doesn't get
+   turned into a light pill button by the global link style. */
+.project-grid a.project-card-link {
+    display: inline-block;
+    margin: 0;
+    padding: 8px 16px;
+
+    background: #4d8cff;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 8px;
+
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.project-grid a.project-card-link:hover {
+    background: #6ea0ff;
+    transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-grid .project-card {
+        transition: none;
+    }
+    .project-grid .dot_development,
+    .project-grid .dot_testing,
+    .project-grid .dot_live {
+        animation: none;
+    }
+}

@@ -31,7 +31,7 @@ function highlightCurrentPage() {
         return;
     }
 
-    if (currentPath.includes("/Pages/Projects.")) {
+    if (currentPath.includes("/Pages/Projects/")) {
         document.getElementById("nav-projects")?.classList.add("active");
     } else if (currentPath.includes("/Pages/About/")) {
         document.getElementById("nav-about")?.classList.add("active");

@@ -1,0 +1,24 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder banner for MrChicken's Test Place">
+  <defs>
+    <linearGradient id="tp-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12141c"/>
+      <stop offset="100%" stop-color="#1b1d22"/>
+    </linearGradient>
+    <pattern id="tp-grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#2d3138" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#tp-bg)"/>
+  <rect width="800" height="450" fill="url(#tp-grid)"/>
+  <g opacity="0.9">
+    <rect x="310" y="150" width="60" height="60" rx="8" fill="#4d8cff"/>
+    <rect x="380" y="185" width="44" height="44" rx="8" fill="#2d3138"/>
+    <rect x="434" y="140" width="50" height="50" rx="8" fill="#4d8cff" opacity="0.6"/>
+  </g>
+  <text x="400" y="340" font-family="Inter, sans-serif" font-size="15" fill="#9ba1b6" text-anchor="middle" letter-spacing="1">
+    PREVIEW — SWAP FOR A REAL SCREENSHOT
+  </text>
+  <text x="400" y="368" font-family="Inter, sans-serif" font-weight="700" font-size="24" fill="#ffffff" text-anchor="middle">
+    TEST PLACE
+  </text>
+</svg>

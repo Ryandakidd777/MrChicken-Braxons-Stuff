@@ -49,3 +49,7 @@
     align-items: center;
     gap: 5px;
 }
+
+.links_desc {
+    color: #000000;
+}
