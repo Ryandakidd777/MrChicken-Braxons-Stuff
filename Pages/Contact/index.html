@@ -4,6 +4,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tiny first-paint loader setup; the full loader lives in /JS/loading.js. -->
+    <script>
+      document.documentElement.classList.add("site-loading");
+      window.__loaderBootFallback = setTimeout(
+        () => document.documentElement.classList.remove("site-loading"),
+        25000,
+      );
+    </script>
+    <style>
+      .site-loading {
+        background: #000;
+      }
+      .site-loading body {
+        overflow: hidden;
+      }
+      .site-loading body > :not(#loader) {
+        visibility: hidden;
+      }
+      .site-loading #loader {
+        display: flex;
+        position: fixed;
+        inset: 0;
+        z-index: 999999;
+        background: #000;
+        color: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .site-loading #loader-video {
+        width: clamp(100px, 15vw, 150px);
+        height: clamp(100px, 15vw, 150px);
+        object-fit: contain;
+      }
+    </style>
 
     <meta
       name="description"
@@ -36,16 +71,67 @@
 
     <title>Contact</title>
     <link rel="icon" href="/Media/Images/Logos/Exc_WebsiteFavicon.webp" />
-    <link rel="stylesheet" href="/CSS/main.css" />
-    <link rel="stylesheet" href="/CSS/header.css" />
-    <link rel="stylesheet" href="/CSS/Pages_Contact.css" />
+    <script src="/JS/loading.js" defer></script>
     <script src="/JS/main.js" defer></script>
     <script src="/JS/footer.js" defer></script>
     <script src="/JS/header.js" defer></script>
-    <script src="/JS/Pages/Contact/Pages_Contact.js"></script>
-    <script src="/JS/nothing.lol" defer></script>
+    <script src="/JS/Pages/Contact/Pages_Contact.js" defer></script>
   </head>
   <body>
+    <!-- Original black-and-video loading screen, with real progress underneath. -->
+    <div id="loader" aria-label="Website loading status">
+      <video
+        id="loader-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="none"
+        poster="/Media/Images/Logos/Exc_.webp"
+        aria-hidden="true"
+      >
+        <source
+          src="/Media/Videos/ExclamitionSpin02.mp4.webm"
+          type="video/webm"
+        />
+        <source src="/Media/Videos/ExclamitionSpin02.mp4" type="video/mp4" />
+      </video>
+      <div class="loader-progress-details">
+        <div
+          class="loader-progress-track"
+          id="loader-progress"
+          role="progressbar"
+          aria-label="Website loading progress"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <span id="loader-progress-fill"></span>
+        </div>
+        <p id="loader-percent" role="status" aria-live="polite">0%</p>
+      </div>
+      <div id="loader-stuck" class="loader-stuck-msg" hidden>
+        <p>
+          Stuck loading? Give it a minute, otherwise try
+          <button id="loader-retry" class="refresh-link" type="button">
+            refreshing</button
+          >. <br />If this problem continues, please contact me at
+          <br />mrchickencontacting.trc@gmail.com
+        </p>
+        <p id="loader-warning" hidden></p>
+        <p class="loader-continue-line">
+          Or
+          <button id="loader-continue" class="refresh-link" type="button">
+            view the site anyway</button
+          >.
+        </p>
+      </div>
+    </div>
+    <!-- Non-render-blocking styles: loader is already visible. -->
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/header.css" />
+    <link rel="stylesheet" href="/CSS/Pages_Contact.css" />
+
     <div class="main">
       <div id="contact-info">
         <h1>Contact Me</h1>

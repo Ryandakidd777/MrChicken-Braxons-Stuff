@@ -2,8 +2,15 @@
 //footer.js
 let initialPushTime = null;
 
+const finishFooterLoading = window.SiteLoader?.begin('Building footer');
 document.addEventListener("DOMContentLoaded", function() {
-    initFooter();
+    try {
+        initFooter();
+        finishFooterLoading?.();
+    } catch (error) {
+        finishFooterLoading?.(error);
+        console.error('Footer initialization failed:', error);
+    }
 });
 
 function initFooter() {

@@ -1,5 +1,16 @@
 /*© 2026 MrChicken's Homemade Website. All rights reserved. */
+const finishContactLoading = window.SiteLoader?.begin('Initializing contact page');
 document.addEventListener("DOMContentLoaded", () => {
+    try {
+        initializeContactPage();
+        finishContactLoading?.();
+    } catch (error) {
+        finishContactLoading?.(error);
+        console.error('Contact page initialization failed:', error);
+    }
+});
+
+function initializeContactPage() {
     const contactInfo = document.getElementById("contact-info");
     const guidelines = document.getElementById("guidelines");
 
@@ -52,4 +63,4 @@ document.addEventListener("DOMContentLoaded", () => {
             contactInfo.style.display = "none";
         }
     });
-});
+}

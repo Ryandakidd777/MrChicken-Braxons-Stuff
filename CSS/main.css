@@ -23,47 +23,130 @@ body {
     display: block; 
 }
 
-/* --- Loading Screen --- */
+/* --- Loading Screen: original appearance, real progress --- */
+/* Hidden when JavaScript is unavailable so visitors can still use the site. */
 #loader {
     position: fixed;
-    top: 0; 
+    top: 0;
     left: 0;
-    width: 100%; 
+    width: 100%;
     height: 100%;
-    background: #000000; 
-    display: flex;
+    background: #000000;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    padding: 20px;
+    text-align: center;
+    overflow-y: auto;
     z-index: 999999;
+    opacity: 1;
     transition: opacity 0.25s ease;
 }
 
-#loader-video { 
-    width: clamp(100px, 15vw, 150px);
-    height: clamp(100px, 15vw, 150px); 
+html.site-loading,
+html.site-loading body {
+    overflow: hidden;
 }
 
+html.site-loading #loader,
+#loader.loader--hidden {
+    display: flex;
+}
+
+#loader.loader--hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#loader-video {
+    width: clamp(100px, 15vw, 150px);
+    height: clamp(100px, 15vw, 150px);
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Only additions to the old design: a thin bar and its actual percentage. */
+.loader-progress-details {
+    width: min(240px, 75vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+}
+
+.loader-progress-track {
+    width: 100%;
+    height: 6px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #252525;
+}
+
+#loader-progress-fill {
+    display: block;
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+    background: #ffffff;
+    transition: width 0.2s ease;
+}
+
+#loader-percent {
+    color: #ffffff;
+    font-family: 'Inter', 'Ubuntu', sans-serif;
+    font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Matches the original 'stuck loading' text/link styling. */
 .loader-stuck-msg {
     color: #ffffff;
-    font-family: 'Inter', 'Ubuntu', sans-serif; 
+    font-family: 'Inter', 'Ubuntu', sans-serif;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
     text-align: center;
     animation: fadeIn 0.5s ease forwards;
 }
 
+.loader-stuck-msg[hidden],
+#loader-warning[hidden] {
+    display: none !important;
+}
+
 .loader-stuck-msg .refresh-link {
-    color: #38bdf8; 
+    appearance: none;
+    display: inline;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    letter-spacing: inherit;
+    color: #38bdf8;
     text-decoration: underline;
     cursor: pointer;
     transition: color 0.2s ease;
 }
 
-/* Hover effect for the link */
 .loader-stuck-msg .refresh-link:hover {
-    color: #7dd3fc; 
+    color: #7dd3fc;
+}
+
+.loader-stuck-msg .refresh-link:focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 2px;
+}
+
+#loader-warning,
+.loader-continue-line {
+    margin-top: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #loader,
+    #loader-progress-fill { transition: none; }
+    .loader-stuck-msg { animation: none; }
 }
 
 @keyframes fadeIn {

@@ -1,41 +1,65 @@
-/*© 2026 MrChicken's Homemade Website. All rights reserved. */
-//header.js
-/* --- Header Loader --- */
-document.addEventListener("DOMContentLoaded", () => {
-    loadHeaderComponent();
-});
+/* © 2026 MrChicken's Homemade Website. All rights reserved. */
+// Navigation must actually be fetched, inserted and have its logo ready.
+const finishNavigationLoading = window.SiteLoader?.begin('Loading navigation');
+
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        await loadHeaderComponent();
+        finishNavigationLoading?.();
+    } catch (error) {
+        console.error('Navigation component failed to load:', error);
+        showFallbackNavigation();
+        finishNavigationLoading?.(error);
+    }
+}, { once: true });
 
 async function loadHeaderComponent() {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12000);
+    let htmlContent;
+
     try {
-        const response = await fetch("/Components/header.html");
-        
-        if (!response.ok) throw new Error("Failed to retrieve header template structure.");
-        
-        const htmlContent = await response.text();
-        
-        document.body.insertAdjacentHTML("afterbegin", htmlContent);
-        
-        highlightCurrentPage();
-        
-    } catch (error) {
-        console.error("Component Loader Error:", error);
+        const response = await fetch('/Components/header.html', { signal: controller.signal });
+        if (!response.ok) throw new Error(`Navigation request returned HTTP ${response.status}`);
+        htmlContent = await response.text();
+    } finally {
+        clearTimeout(timeout);
     }
+
+    document.body.insertAdjacentHTML('afterbegin', htmlContent);
+    highlightCurrentPage();
+
+    // Dynamic images aren't present in the initial HTML image collection.
+    const logo = document.querySelector('.site-header .logo-img');
+    if (logo && window.SiteLoader) await window.SiteLoader.waitForImage(logo);
+}
+
+function showFallbackNavigation() {
+    if (document.querySelector('.site-header')) return;
+    // Usable local links even if the shared navigation fragment is unavailable.
+    const header = document.createElement('header');
+    header.className = 'site-header';
+    header.innerHTML = `
+        <div class="header-container">
+            <a href="/" class="logo"><span class="logo-text">MrChicken's Homemade Website</span></a>
+            <nav class="main-nav" aria-label="Main navigation"><ul>
+                <li><a href="/" class="nav-link" id="nav-home">Home</a></li>
+                <li><a href="/Pages/Projects/" class="nav-link" id="nav-projects">Projects</a></li>
+                <li><a href="/Pages/Contact/" class="nav-link" id="nav-contact">Contact</a></li>
+                <li><a href="/Pages/Links/" class="nav-link" id="nav-links">Links</a></li>
+            </ul></nav>
+        </div>`;
+    document.body.prepend(header);
+    highlightCurrentPage();
 }
 
 function highlightCurrentPage() {
-    const currentPath = window.location.pathname;
-    
-    if (currentPath === "/" || currentPath.endsWith("index.html")) {
-        const homeLink = document.getElementById("nav-home");
-        if (homeLink) homeLink.classList.add("active");
-        return;
-    }
-
-    if (currentPath.includes("/Pages/Projects/")) {
-        document.getElementById("nav-projects")?.classList.add("active");
-    } else if (currentPath.includes("/Pages/About/")) {
-        document.getElementById("nav-about")?.classList.add("active");
-    } else if (currentPath.includes("/Pages/Contact/")) {
-        document.getElementById("nav-contact")?.classList.add("active");
-    }
+    const path = window.location.pathname.replace(/index\.html$/i, '');
+    const activeId = path === '/' ? 'nav-home'
+        : path.startsWith('/Pages/Projects/') ? 'nav-projects'
+        : path.startsWith('/Pages/About/') ? 'nav-about'
+        : path.startsWith('/Pages/Contact/') ? 'nav-contact'
+        : path.startsWith('/Pages/Links/') ? 'nav-links'
+        : null;
+    if (activeId) document.getElementById(activeId)?.classList.add('active');
 }
